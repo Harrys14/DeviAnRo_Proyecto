@@ -67,15 +67,17 @@
         <h1>App Delivery</h1>
         <h2>Iniciar Sesión</h2>
         
-        <form>
-            <label>Correo electrónico</label>
-            <input type="email" placeholder="ejemplo@correo.com">
-            
-            <label>Contraseña</label>
-            <input type="password" placeholder="••••••••">
-            
-            <button type="button" onclick="window.location.href='home.html'" class="btn-primary">Iniciar sesión</button>
-        </form>
+       <form action="LoginServlet" method="post">
+
+    <label>Correo electrónico</label>
+    <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
+    
+    <label>Contraseña</label>
+    <input type="password" name="password" placeholder="••••••••" required>
+    
+    <button type="submit" class="btn-primary">Iniciar sesión</button>
+
+</form>
         
         <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
     </div>

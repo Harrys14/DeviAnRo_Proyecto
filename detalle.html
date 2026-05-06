@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Delivery - Detalle</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 15px 20px 90px;
+        }
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #E53935;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+        .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #E53935;
+            margin-bottom: 15px;
+        }
+        .description {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-primary {
+            flex: 1;
+            padding: 16px;
+            background: #E53935;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            flex: 1;
+            padding: 16px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0 8px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+        }
+        .bottom-nav a {
+            color: #777;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+        .bottom-nav a.active { color: #E53935; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Imagen grande -->
+        <img id="productImage" class="product-image" src="img/hamburguesa.jpg" alt="Producto">
+
+        <h1 id="productName">Hamburguesa Clásica</h1>
+        <div class="price" id="productPrice">$13.900</div>
+
+        <div class="description">
+            <h3>Descripción</h3>
+            <p id="productDesc">Deliciosa hamburguesa con carne de res 150g, queso cheddar, tomate fresco, lechuga crujiente y nuestra salsa especial de la casa.</p>
+            
+            <h3 style="margin-top:15px;">Ingredientes</h3>
+            <p id="productIngredientes"></p>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn-secondary" onclick="window.history.back()">Volver</button>
+            <button class="btn-primary" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <!-- Navegación inferior -->
+    <div class="bottom-nav">
+        <a href="home.html">🏠<br>Home</a>
+        <a href="#">🔎<br>Buscar</a>
+        <a href="carrito.html">🛒<br>Carrito</a>
+        <a href="#">👤<br>Cuenta</a>
+    </div>
+
+    <script>
+const producto = JSON.parse(localStorage.getItem("productoSeleccionado"));
+
+if (producto) {
+    document.getElementById("productName").textContent = producto.nombre;
+    document.getElementById("productPrice").textContent = producto.precio;
+    document.getElementById("productDesc").textContent = producto.descripcion;
+    document.getElementById("productImage").src = producto.imagen;
+    document.getElementById("productIngredientes").textContent = producto.ingredientes;
+}
+</script>
+        
+</body>
+</html>

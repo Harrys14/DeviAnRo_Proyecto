@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Delivery - Login</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #ffebee, #f8f9fa);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #E53935;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #444;
+            margin-bottom: 40px;
+        }
+        form {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 15px 0 8px;
+            font-weight: 600;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: #E53935;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        p { margin-top: 25px; }
+        a { color: #E53935; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>App Delivery</h1>
+        <h2>Iniciar Sesión</h2>
+        
+        <form>
+            <label>Correo electrónico</label>
+            <input type="email" placeholder="ejemplo@correo.com">
+            
+            <label>Contraseña</label>
+            <input type="password" placeholder="••••••••">
+            
+            <button type="button" onclick="window.location.href='home.html'" class="btn-primary">Iniciar sesión</button>
+        </form>
+        
+        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </div>
+</body>
+</html>

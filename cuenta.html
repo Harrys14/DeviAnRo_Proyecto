@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Delivery - Cuenta</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 20px 20px 90px;
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: #E53935;
+            color: white;
+            font-size: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        h1 {
+            color: #E53935;
+            margin-bottom: 5px;
+        }
+        .email {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .menu-item {
+            background: white;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+        .menu-item:hover {
+            background: #fff0f0;
+        }
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0 8px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+        }
+        .bottom-nav a {
+            color: #777;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+        }
+        .bottom-nav a.active {
+            color: #E53935;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="avatar">👤</div>
+            <h1>Harryson</h1>
+            <p class="email">harryson@ejemplo.com</p>
+        </div>
+
+        <div class="menu-item" onclick="alert('Opción en desarrollo')">
+            📍 Mis direcciones
+        </div>
+        <div class="menu-item" onclick="alert('Opción en desarrollo')">
+            📜 Mis pedidos
+        </div>
+        <div class="menu-item" onclick="alert('Opción en desarrollo')">
+            ❤️ Favoritos
+        </div>
+        <div class="menu-item" onclick="alert('Opción en desarrollo')">
+            ⚙️ Configuración
+        </div>
+        <div class="menu-item" onclick="window.location.href='index.html'">
+            🚪 Cerrar sesión
+        </div>
+    </div>
+
+    <!-- Navegación inferior -->
+    <div class="bottom-nav">
+        <a href="home.html">🏠<br>Home</a>
+        <a href="#">🔎<br>Buscar</a>
+        <a href="carrito.html">🛒<br>Carrito</a>
+        <a href="perfil.html" class="active">👤<br>Cuenta</a>
+    </div>
+</body>
+</html>

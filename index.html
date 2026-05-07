@@ -67,7 +67,7 @@
         <h1>App Delivery</h1>
         <h2>Iniciar Sesión</h2>
         
-       <form action="LoginServlet" method="post">
+        <form action="LoginServlet" method="post" onsubmit="simularLogin(event)">
 
     <label>Correo electrónico</label>
     <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
@@ -78,6 +78,13 @@
     <button type="submit" class="btn-primary">Iniciar sesión</button>
 
 </form>
+
+<script>
+function simularLogin(e) {
+    e.preventDefault(); 
+    window.location.href = "home.html"; 
+}
+</script>
         
         <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
     </div>

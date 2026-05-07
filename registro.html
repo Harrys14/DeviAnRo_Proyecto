@@ -35,17 +35,11 @@
 <body>
     <div class="container">
         <h1>Registro</h1>
-        <form action="RegistroServlet" method="post">
-
-    <input type="text" name="nombre" placeholder="Nombre completo" required>
-
-    <input type="email" name="correo" placeholder="Correo electrónico" required>
-
-    <input type="password" name="password" placeholder="Contraseña" required>
-
-    <button type="submit" class="btn-primary">Registrarse</button>
-
-</form>
+        <input type="text" placeholder="Nombre completo">
+        <input type="email" placeholder="Correo electrónico">
+        <input type="password" placeholder="Contraseña">
+        <input type="password" placeholder="Confirmar contraseña">
+        <button class="btn-primary" onclick="window.location.href='home.html'">Registrarse</button>
         <p style="text-align:center; margin-top:20px;">
             ¿Ya tienes cuenta? <a href="index.html">Inicia sesión</a>
         </p>

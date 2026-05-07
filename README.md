@@ -1,9 +1,11 @@
 NOTA:
 
-El sistema cuenta con implementación de Servlets (LoginServlet y RegistroServlet) y conexión a base de datos mediante JDBC a través de la clase UsuarioDAO.
+El sistema cuenta con implementación de Servlets (LoginServlet y RegistroServlet), conexión a base de datos mediante JDBC a través de la clase UsuarioDAO y páginas JSP para pruebas de interacción dinámica.
 
-Durante las pruebas, se evidenció que para la ejecución completa del login y registro es necesario un servidor de aplicaciones (Apache Tomcat), ya que los Servlets no pueden ejecutarse directamente desde archivos HTML abiertos en el navegador.
+El proyecto incluye el uso de métodos GET y POST, además de formularios HTML conectados con componentes backend desarrollados en Java conforme a los requerimientos de la evidencia.
 
-Debido a que no se configuró un servidor en este entorno, se implementó una simulación en el frontend que permite la navegación entre páginas (login, registro y home) para efectos de visualización.
+Durante las pruebas, se evidenció que para la ejecución completa del login, registro y procesamiento de JSP es necesario un servidor de aplicaciones como Apache Tomcat, ya que los Servlets y JSP no pueden ejecutarse directamente desde archivos HTML abiertos en el navegador.
 
-Sin embargo, todo el backend requerido (Servlets, DAO, conexión JDBC) se encuentra completamente desarrollado conforme a los requerimientos del proyecto.
+Debido a que no se configuró un servidor en este entorno, se implementó una simulación visual en el frontend que permite la navegación entre páginas (login, registro, home, carrito y cuenta) para efectos de demostración y visualización de la aplicación.
+
+Sin embargo, toda la estructura backend requerida (Servlets, DAO, conexión JDBC y JSP) se encuentra desarrollada e incluida dentro del proyecto.

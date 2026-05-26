@@ -3,113 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Delivery - Cuenta</title>
+    <title>DeviAnRo - Cuenta</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f8f9fa;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
-        .container {
-            max-width: 420px;
-            margin: 0 auto;
-            padding: 20px 20px 90px;
+
+        body{
+            font-family:'Segoe UI', Arial, sans-serif;
+            background:#f8f9fa;
         }
-        .profile-header {
-            text-align: center;
-            margin-bottom: 30px;
+
+        /* ===== CONTENEDOR ===== */
+
+        .container{
+
+            width:100%;
+            max-width:1400px;
+            margin:auto;
+            padding:30px;
         }
-        .avatar {
-            width: 100px;
-            height: 100px;
-            background: #E53935;
-            color: white;
-            font-size: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
+
+        /* ===== HEADER ===== */
+
+        .top-header{
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:35px;
         }
-        h1 {
-            color: #E53935;
-            margin-bottom: 5px;
+
+        .logo{
+
+            color:#E53935;
+            font-size:42px;
+            font-weight:bold;
         }
-        .email {
-            color: #666;
-            margin-bottom: 30px;
+
+        .header-right{
+
+            display:flex;
+            align-items:center;
+            gap:15px;
         }
-        .menu-item {
-            background: white;
-            padding: 18px 20px;
-            margin-bottom: 12px;
-            border-radius: 14px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 17px;
-            cursor: pointer;
+
+        .location{
+
+            background:#E53935;
+            color:white;
+            padding:10px 20px;
+            border-radius:30px;
+            font-size:15px;
         }
-        .menu-item:hover {
-            background: #fff0f0;
+
+        /* ===== MENU ===== */
+
+        .menu-container{
+
+            position:relative;
         }
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 420px;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 12px 0 8px;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.15);
+
+        .menu-btn{
+
+            background:#E53935;
+            color:white;
+            border:none;
+            width:45px;
+            height:45px;
+            border-radius:12px;
+            font-size:24px;
+            cursor:pointer;
         }
-        .bottom-nav a {
-            color: #777;
-            text-decoration: none;
-            text-align: center;
-            font-size: 12px;
+
+        .menu-dropdown{
+
+            position:absolute;
+            top:55px;
+            right:0;
+            background:white;
+            width:220px;
+            border-radius:15px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+            display:none;
+            overflow:hidden;
+            z-index:999;
         }
-        .bottom-nav a.active {
-            color: #E53935;
-            font-weight: bold;
+
+        .menu-dropdown a{
+
+            display:block;
+            padding:16px 20px;
+            color:#333;
+            text-decoration:none;
         }
+
+        .menu-dropdown a:hover{
+
+            background:#f5f5f5;
+        }
+
+        /* ===== PERFIL ===== */
+
+        .profile-card{
+
+            background:white;
+            border-radius:25px;
+            padding:40px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom:30px;
+            text-align:center;
+        }
+
+        .avatar{
+
+            width:120px;
+            height:120px;
+            background:#E53935;
+            color:white;
+            font-size:50px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin:0 auto 20px;
+        }
+
+        .profile-card h1{
+
+            color:#E53935;
+            font-size:36px;
+            margin-bottom:10px;
+        }
+
+        .email{
+
+            color:#666;
+            font-size:18px;
+        }
+
+        /* ===== OPCIONES ===== */
+
+        .menu-grid{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:20px;
+        }
+
+        .menu-item{
+
+            background:white;
+            padding:25px;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.08);
+            font-size:20px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .menu-item:hover{
+
+            transform:translateY(-5px);
+            background:#fff3f3;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width:768px){
+
+            .container{
+
+                padding:18px;
+            }
+
+            .top-header{
+
+                flex-direction:column;
+                align-items:flex-start;
+                gap:15px;
+            }
+
+            .header-right{
+
+                width:100%;
+                justify-content:space-between;
+            }
+
+            .logo{
+
+                font-size:32px;
+            }
+
+            .profile-card{
+
+                padding:25px;
+            }
+
+            .profile-card h1{
+
+                font-size:28px;
+            }
+
+            .avatar{
+
+                width:100px;
+                height:100px;
+                font-size:42px;
+            }
+
+            .menu-item{
+
+                font-size:18px;
+                padding:20px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="profile-header">
-            <div class="avatar">👤</div>
-            <h1>Harryson</h1>
-            <p class="email">harryson@ejemplo.com</p>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="logo">
+            DeviAnRo
         </div>
+
+        <div class="header-right">
+
+            <div class="location">
+                Bogotá
+            </div>
+
+            <div class="menu-container">
+
+                <button class="menu-btn" onclick="toggleMenu()">
+                    ⋮
+                </button>
+
+                <div class="menu-dropdown" id="menuDropdown">
+
+                    <a href="home.html">
+                        🏠 Home
+                    </a>
+
+                    <a href="#">
+                        🔎 Buscar
+                    </a>
+
+                    <a href="carrito.html">
+                        🛒 Carrito
+                    </a>
+
+                    <a href="cuenta.html">
+                        👤 Cuenta
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- PERFIL -->
+
+    <div class="profile-card">
+
+        <div class="avatar">
+            👤
+        </div>
+
+        <h1>
+            Harryson
+        </h1>
+
+        <p class="email">
+            harryson@ejemplo.com
+        </p>
+
+    </div>
+
+    <!-- OPCIONES -->
+
+    <div class="menu-grid">
 
         <div class="menu-item" onclick="alert('Opción en desarrollo')">
             📍 Mis direcciones
         </div>
+
         <div class="menu-item" onclick="alert('Opción en desarrollo')">
             📜 Mis pedidos
         </div>
+
         <div class="menu-item" onclick="alert('Opción en desarrollo')">
             ❤️ Favoritos
         </div>
+
         <div class="menu-item" onclick="alert('Opción en desarrollo')">
             ⚙️ Configuración
         </div>
-        <div class="menu-item" onclick="window.location.href='index.html'">
+
+        <div 
+            class="menu-item"
+            onclick="window.location.href='index.html'"
+        >
             🚪 Cerrar sesión
         </div>
+
     </div>
 
-    <!-- Navegación inferior -->
-    <div class="bottom-nav">
-        <a href="home.html">🏠<br>Home</a>
-        <a href="#">🔎<br>Buscar</a>
-        <a href="carrito.html">🛒<br>Carrito</a>
-        <a href="perfil.html" class="active">👤<br>Cuenta</a>
-    </div>
+</div>
+
+<script>
+
+/* ===== MENU ===== */
+
+function toggleMenu(){
+
+    const menu = document.getElementById("menuDropdown");
+
+    if(menu.style.display === "block"){
+
+        menu.style.display = "none";
+
+    }else{
+
+        menu.style.display = "block";
+    }
+}
+
+window.onclick = function(e){
+
+    if(!e.target.matches('.menu-btn')){
+
+        const menu = document.getElementById("menuDropdown");
+
+        if(menu.style.display === "block"){
+
+            menu.style.display = "none";
+        }
+    }
+}
+
+</script>
+
 </body>
 </html>

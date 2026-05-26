@@ -3,90 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Delivery - Login</title>
+
+    <title>DeviAnRo - Login</title>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #ffebee, #f8f9fa);
-            min-height: 100vh;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
-        .container {
-            max-width: 420px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+
+        body{
+            font-family:'Segoe UI', Arial, sans-serif;
+            background:linear-gradient(135deg,#ffebee,#f8f9fa);
+            min-height:100vh;
         }
-        h1 {
-            color: #E53935;
-            font-size: 42px;
-            margin-bottom: 10px;
+
+        .container{
+
+            display:flex;
+
+            min-height:100vh;
         }
-        h2 {
-            color: #444;
-            margin-bottom: 40px;
+
+        /* ===== LADO IZQUIERDO ===== */
+
+        .left{
+
+            flex:1;
+
+            background:#E53935;
+
+            color:white;
+
+            display:flex;
+
+            flex-direction:column;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:60px;
         }
-        form {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        .left h1{
+
+            font-size:72px;
+
+            margin-bottom:20px;
         }
-        label {
-            display: block;
-            text-align: left;
-            margin: 15px 0 8px;
-            font-weight: 600;
+
+        .left p{
+
+            font-size:24px;
+
+            text-align:center;
+
+            max-width:500px;
+
+            line-height:1.6;
         }
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 12px;
-            font-size: 16px;
-            margin-bottom: 20px;
+
+        /* ===== LADO DERECHO ===== */
+
+        .right{
+
+            flex:1;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:40px;
         }
-        .btn-primary {
-            width: 100%;
-            padding: 16px;
-            background: #E53935;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
+
+        .login-box{
+
+            width:100%;
+
+            max-width:500px;
         }
-        p { margin-top: 25px; }
-        a { color: #E53935; font-weight: 600; }
+
+        h2{
+
+            color:#333;
+
+            font-size:42px;
+
+            margin-bottom:35px;
+
+            text-align:center;
+        }
+
+        form{
+
+            background:white;
+
+            padding:45px;
+
+            border-radius:25px;
+
+            box-shadow:0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        label{
+
+            display:block;
+
+            margin:15px 0 8px;
+
+            font-weight:600;
+
+            color:#333;
+        }
+
+        input{
+
+            width:100%;
+
+            padding:16px;
+
+            border:2px solid #ddd;
+
+            border-radius:12px;
+
+            font-size:16px;
+
+            margin-bottom:20px;
+
+            outline:none;
+
+            transition:0.3s;
+        }
+
+        input:focus{
+
+            border-color:#E53935;
+        }
+
+        .btn-primary{
+
+            width:100%;
+
+            padding:16px;
+
+            background:#E53935;
+
+            color:white;
+
+            border:none;
+
+            border-radius:12px;
+
+            font-size:18px;
+
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .btn-primary:hover{
+
+            background:#c62828;
+        }
+
+        .register{
+
+            text-align:center;
+
+            margin-top:25px;
+        }
+
+        .register a{
+
+            color:#E53935;
+
+            font-weight:bold;
+
+            text-decoration:none;
+        }
+
+        .register a:hover{
+
+            text-decoration:underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width:900px){
+
+            .container{
+
+                flex-direction:column;
+            }
+
+            .left{
+
+                padding:50px 20px;
+            }
+
+            .left h1{
+
+                font-size:46px;
+            }
+
+            .left p{
+
+                font-size:18px;
+            }
+
+            .right{
+
+                padding:20px;
+            }
+
+            h2{
+
+                font-size:32px;
+            }
+
+            form{
+
+                padding:30px 22px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
+
     <div class="container">
-        <h1>App Delivery</h1>
-        <h2>Iniciar Sesión</h2>
-        
-        <form action="LoginServlet" method="post" onsubmit="simularLogin(event)">
 
-    <label>Correo electrónico</label>
-    <input type="email" name="correo" placeholder="ejemplo@correo.com" required>
-    
-    <label>Contraseña</label>
-    <input type="password" name="password" placeholder="••••••••" required>
-    
-    <button type="submit" class="btn-primary">Iniciar sesión</button>
+        <!-- LADO IZQUIERDO -->
 
-</form>
+        <div class="left">
 
-<script>
-function simularLogin(e) {
-    e.preventDefault(); 
-    window.location.href = "home.html"; 
-}
-</script>
-        
-        <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+            <h1>DeviAnRo</h1>
+
+            <p>
+                Pide tus comidas favoritas desde cualquier lugar de forma rápida y sencilla.
+            </p>
+
+        </div>
+
+        <!-- LADO DERECHO -->
+
+        <div class="right">
+
+            <div class="login-box">
+
+                <h2>Iniciar Sesión</h2>
+
+                <form action="LoginServlet" method="post" onsubmit="simularLogin(event)">
+
+                    <label>Correo electrónico</label>
+
+                    <input 
+                        type="email"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    >
+
+                    <label>Contraseña</label>
+
+                    <input 
+                        type="password"
+                        name="password"
+                        placeholder="••••••••"
+                        required
+                    >
+
+                    <button type="submit" class="btn-primary">
+                        Iniciar sesión
+                    </button>
+
+                </form>
+
+                <div class="register">
+
+                    <p>
+                        ¿No tienes cuenta?
+                        <a href="registro.html">Regístrate aquí</a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
+    <script>
+
+        function simularLogin(e){
+
+            e.preventDefault();
+
+            window.location.href = "home.html";
+
+        }
+
+    </script>
+
 </body>
 </html>
